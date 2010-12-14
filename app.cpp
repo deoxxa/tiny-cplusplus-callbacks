@@ -1,5 +1,4 @@
 #include <cstdio>
-#include <queue>
 
 #include "hook.h"
 
@@ -24,9 +23,7 @@ int main()
 
   printf("We have %d callback(s)\n\n", hook->numCallbacks());
 
-  std::queue<void*> args;
-  args.push((void*)3);
-  args.push((void*)5);
+  void* args[] = { (void*)3, (void*)5 };
 
   printf("Calling all callbacks\n");
   hook->doAll(args);

@@ -1,12 +1,10 @@
-#include <queue>
-
 template <class R>
 struct functor0
 {
   typedef R rtype;
   typedef R (*type)();
 
-  static R call(functor0::type function, std::queue<void*> args)
+  static R call(functor0::type function, void** args)
   {
     return function();
   }
@@ -18,10 +16,9 @@ struct functor1
   typedef R rtype;
   typedef R (*type)(A0 a0);
 
-  static R call(functor1::type function, std::queue<void*> args)
+  static R call(functor1::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    return function(a0);
+    return function((A0)a0);
   }
 };
 
@@ -31,11 +28,9 @@ struct functor2
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1);
 
-  static R call(functor2::type function, std::queue<void*> args)
+  static R call(functor2::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    return function(a0, a1);
+    return function((A0)a0, (A1)a1);
   }
 };
 
@@ -45,12 +40,9 @@ struct functor3
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1, A2 a2);
 
-  static R call(functor3::type function, std::queue<void*> args)
+  static R call(functor3::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    A2 a2 = (A2)(args.front()); args.pop();
-    return function(a0, a1, a2);
+    return function((A0)a0, (A1)a1, (A2)a2);
   }
 };
 
@@ -60,13 +52,9 @@ struct functor4
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1, A2 a2, A3 a3);
 
-  static R call(functor4::type function, std::queue<void*> args)
+  static R call(functor4::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    A2 a2 = (A2)(args.front()); args.pop();
-    A3 a3 = (A3)(args.front()); args.pop();
-    return function(a0, a1, a2, a3);
+    return function((A0)a0, (A1)a1, (A2)a2, (A3)a3);
   }
 };
 
@@ -76,14 +64,9 @@ struct functor5
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1, A2 a2, A3 a3, A4 a4);
 
-  static R call(functor5::type function, std::queue<void*> args)
+  static R call(functor5::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    A2 a2 = (A2)(args.front()); args.pop();
-    A3 a3 = (A3)(args.front()); args.pop();
-    A4 a4 = (A4)(args.front()); args.pop();
-    return function(a0, a1, a2, a3, a4);
+    return function((A0)a0, (A1)a1, (A2)a2, (A3)a3, (A4)a4);
   }
 };
 
@@ -93,15 +76,9 @@ struct functor6
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5);
 
-  static R call(functor6::type function, std::queue<void*> args)
+  static R call(functor6::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    A2 a2 = (A2)(args.front()); args.pop();
-    A3 a3 = (A3)(args.front()); args.pop();
-    A4 a4 = (A4)(args.front()); args.pop();
-    A5 a5 = (A5)(args.front()); args.pop();
-    return function(a0, a1, a2, a3, a4, a5);
+    return function((A0)a0, (A1)a1, (A2)a2, (A3)a3, (A4)a4, (A5)a5);
   }
 };
 
@@ -111,16 +88,9 @@ struct functor7
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6);
 
-  static R call(functor7::type function, std::queue<void*> args)
+  static R call(functor7::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    A2 a2 = (A2)(args.front()); args.pop();
-    A3 a3 = (A3)(args.front()); args.pop();
-    A4 a4 = (A4)(args.front()); args.pop();
-    A5 a5 = (A5)(args.front()); args.pop();
-    A6 a6 = (A6)(args.front()); args.pop();
-    return function(a0, a1, a2, a3, a4, a5, a6);
+    return function((A0)a0, (A1)a1, (A2)a2, (A3)a3, (A4)a4, (A5)a5, (A6)a6);
   }
 };
 
@@ -130,17 +100,9 @@ struct functor8
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7);
 
-  static R call(functor8::type function, std::queue<void*> args)
+  static R call(functor8::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    A2 a2 = (A2)(args.front()); args.pop();
-    A3 a3 = (A3)(args.front()); args.pop();
-    A4 a4 = (A4)(args.front()); args.pop();
-    A5 a5 = (A5)(args.front()); args.pop();
-    A6 a6 = (A6)(args.front()); args.pop();
-    A7 a7 = (A7)(args.front()); args.pop();
-    return function(a0, a1, a2, a3, a4, a5, a6, a7);
+    return function((A0)a0, (A1)a1, (A2)a2, (A3)a3, (A4)a4, (A5)a5, (A6)a6, (A7)a7);
   }
 };
 
@@ -150,18 +112,9 @@ struct functor9
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8);
 
-  static R call(functor9::type function, std::queue<void*> args)
+  static R call(functor9::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    A2 a2 = (A2)(args.front()); args.pop();
-    A3 a3 = (A3)(args.front()); args.pop();
-    A4 a4 = (A4)(args.front()); args.pop();
-    A5 a5 = (A5)(args.front()); args.pop();
-    A6 a6 = (A6)(args.front()); args.pop();
-    A7 a7 = (A7)(args.front()); args.pop();
-    A8 a8 = (A8)(args.front()); args.pop();
-    return function(a0, a1, a2, a3, a4, a5, a6, a7, a8);
+    return function((A0)a0, (A1)a1, (A2)a2, (A3)a3, (A4)a4, (A5)a5, (A6)a6, (A7)a7, (A8)a8);
   }
 };
 
@@ -171,19 +124,9 @@ struct functor10
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9);
 
-  static R call(functor10::type function, std::queue<void*> args)
+  static R call(functor10::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    A2 a2 = (A2)(args.front()); args.pop();
-    A3 a3 = (A3)(args.front()); args.pop();
-    A4 a4 = (A4)(args.front()); args.pop();
-    A5 a5 = (A5)(args.front()); args.pop();
-    A6 a6 = (A6)(args.front()); args.pop();
-    A7 a7 = (A7)(args.front()); args.pop();
-    A8 a8 = (A8)(args.front()); args.pop();
-    A9 a9 = (A9)(args.front()); args.pop();
-    return function(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
+    return function((A0)a0, (A1)a1, (A2)a2, (A3)a3, (A4)a4, (A5)a5, (A6)a6, (A7)a7, (A8)a8, (A9)a9);
   }
 };
 
@@ -193,20 +136,9 @@ struct functor11
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10);
 
-  static R call(functor11::type function, std::queue<void*> args)
+  static R call(functor11::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    A2 a2 = (A2)(args.front()); args.pop();
-    A3 a3 = (A3)(args.front()); args.pop();
-    A4 a4 = (A4)(args.front()); args.pop();
-    A5 a5 = (A5)(args.front()); args.pop();
-    A6 a6 = (A6)(args.front()); args.pop();
-    A7 a7 = (A7)(args.front()); args.pop();
-    A8 a8 = (A8)(args.front()); args.pop();
-    A9 a9 = (A9)(args.front()); args.pop();
-    A10 a10 = (A10)(args.front()); args.pop();
-    return function(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    return function((A0)a0, (A1)a1, (A2)a2, (A3)a3, (A4)a4, (A5)a5, (A6)a6, (A7)a7, (A8)a8, (A9)a9, (A10)a10);
   }
 };
 
@@ -216,21 +148,9 @@ struct functor12
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11);
 
-  static R call(functor12::type function, std::queue<void*> args)
+  static R call(functor12::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    A2 a2 = (A2)(args.front()); args.pop();
-    A3 a3 = (A3)(args.front()); args.pop();
-    A4 a4 = (A4)(args.front()); args.pop();
-    A5 a5 = (A5)(args.front()); args.pop();
-    A6 a6 = (A6)(args.front()); args.pop();
-    A7 a7 = (A7)(args.front()); args.pop();
-    A8 a8 = (A8)(args.front()); args.pop();
-    A9 a9 = (A9)(args.front()); args.pop();
-    A10 a10 = (A10)(args.front()); args.pop();
-    A11 a11 = (A11)(args.front()); args.pop();
-    return function(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    return function((A0)a0, (A1)a1, (A2)a2, (A3)a3, (A4)a4, (A5)a5, (A6)a6, (A7)a7, (A8)a8, (A9)a9, (A10)a10, (A11)a11);
   }
 };
 
@@ -240,22 +160,9 @@ struct functor13
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11, A12 a12);
 
-  static R call(functor13::type function, std::queue<void*> args)
+  static R call(functor13::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    A2 a2 = (A2)(args.front()); args.pop();
-    A3 a3 = (A3)(args.front()); args.pop();
-    A4 a4 = (A4)(args.front()); args.pop();
-    A5 a5 = (A5)(args.front()); args.pop();
-    A6 a6 = (A6)(args.front()); args.pop();
-    A7 a7 = (A7)(args.front()); args.pop();
-    A8 a8 = (A8)(args.front()); args.pop();
-    A9 a9 = (A9)(args.front()); args.pop();
-    A10 a10 = (A10)(args.front()); args.pop();
-    A11 a11 = (A11)(args.front()); args.pop();
-    A12 a12 = (A12)(args.front()); args.pop();
-    return function(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+    return function((A0)a0, (A1)a1, (A2)a2, (A3)a3, (A4)a4, (A5)a5, (A6)a6, (A7)a7, (A8)a8, (A9)a9, (A10)a10, (A11)a11, (A12)a12);
   }
 };
 
@@ -265,23 +172,9 @@ struct functor14
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11, A12 a12, A13 a13);
 
-  static R call(functor14::type function, std::queue<void*> args)
+  static R call(functor14::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    A2 a2 = (A2)(args.front()); args.pop();
-    A3 a3 = (A3)(args.front()); args.pop();
-    A4 a4 = (A4)(args.front()); args.pop();
-    A5 a5 = (A5)(args.front()); args.pop();
-    A6 a6 = (A6)(args.front()); args.pop();
-    A7 a7 = (A7)(args.front()); args.pop();
-    A8 a8 = (A8)(args.front()); args.pop();
-    A9 a9 = (A9)(args.front()); args.pop();
-    A10 a10 = (A10)(args.front()); args.pop();
-    A11 a11 = (A11)(args.front()); args.pop();
-    A12 a12 = (A12)(args.front()); args.pop();
-    A13 a13 = (A13)(args.front()); args.pop();
-    return function(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+    return function((A0)a0, (A1)a1, (A2)a2, (A3)a3, (A4)a4, (A5)a5, (A6)a6, (A7)a7, (A8)a8, (A9)a9, (A10)a10, (A11)a11, (A12)a12, (A13)a13);
   }
 };
 
@@ -291,24 +184,9 @@ struct functor15
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11, A12 a12, A13 a13, A14 a14);
 
-  static R call(functor15::type function, std::queue<void*> args)
+  static R call(functor15::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    A2 a2 = (A2)(args.front()); args.pop();
-    A3 a3 = (A3)(args.front()); args.pop();
-    A4 a4 = (A4)(args.front()); args.pop();
-    A5 a5 = (A5)(args.front()); args.pop();
-    A6 a6 = (A6)(args.front()); args.pop();
-    A7 a7 = (A7)(args.front()); args.pop();
-    A8 a8 = (A8)(args.front()); args.pop();
-    A9 a9 = (A9)(args.front()); args.pop();
-    A10 a10 = (A10)(args.front()); args.pop();
-    A11 a11 = (A11)(args.front()); args.pop();
-    A12 a12 = (A12)(args.front()); args.pop();
-    A13 a13 = (A13)(args.front()); args.pop();
-    A14 a14 = (A14)(args.front()); args.pop();
-    return function(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
+    return function((A0)a0, (A1)a1, (A2)a2, (A3)a3, (A4)a4, (A5)a5, (A6)a6, (A7)a7, (A8)a8, (A9)a9, (A10)a10, (A11)a11, (A12)a12, (A13)a13, (A14)a14);
   }
 };
 
@@ -318,25 +196,9 @@ struct functor16
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11, A12 a12, A13 a13, A14 a14, A15 a15);
 
-  static R call(functor16::type function, std::queue<void*> args)
+  static R call(functor16::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    A2 a2 = (A2)(args.front()); args.pop();
-    A3 a3 = (A3)(args.front()); args.pop();
-    A4 a4 = (A4)(args.front()); args.pop();
-    A5 a5 = (A5)(args.front()); args.pop();
-    A6 a6 = (A6)(args.front()); args.pop();
-    A7 a7 = (A7)(args.front()); args.pop();
-    A8 a8 = (A8)(args.front()); args.pop();
-    A9 a9 = (A9)(args.front()); args.pop();
-    A10 a10 = (A10)(args.front()); args.pop();
-    A11 a11 = (A11)(args.front()); args.pop();
-    A12 a12 = (A12)(args.front()); args.pop();
-    A13 a13 = (A13)(args.front()); args.pop();
-    A14 a14 = (A14)(args.front()); args.pop();
-    A15 a15 = (A15)(args.front()); args.pop();
-    return function(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+    return function((A0)a0, (A1)a1, (A2)a2, (A3)a3, (A4)a4, (A5)a5, (A6)a6, (A7)a7, (A8)a8, (A9)a9, (A10)a10, (A11)a11, (A12)a12, (A13)a13, (A14)a14, (A15)a15);
   }
 };
 
@@ -346,26 +208,9 @@ struct functor17
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11, A12 a12, A13 a13, A14 a14, A15 a15, A16 a16);
 
-  static R call(functor17::type function, std::queue<void*> args)
+  static R call(functor17::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    A2 a2 = (A2)(args.front()); args.pop();
-    A3 a3 = (A3)(args.front()); args.pop();
-    A4 a4 = (A4)(args.front()); args.pop();
-    A5 a5 = (A5)(args.front()); args.pop();
-    A6 a6 = (A6)(args.front()); args.pop();
-    A7 a7 = (A7)(args.front()); args.pop();
-    A8 a8 = (A8)(args.front()); args.pop();
-    A9 a9 = (A9)(args.front()); args.pop();
-    A10 a10 = (A10)(args.front()); args.pop();
-    A11 a11 = (A11)(args.front()); args.pop();
-    A12 a12 = (A12)(args.front()); args.pop();
-    A13 a13 = (A13)(args.front()); args.pop();
-    A14 a14 = (A14)(args.front()); args.pop();
-    A15 a15 = (A15)(args.front()); args.pop();
-    A16 a16 = (A16)(args.front()); args.pop();
-    return function(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+    return function((A0)a0, (A1)a1, (A2)a2, (A3)a3, (A4)a4, (A5)a5, (A6)a6, (A7)a7, (A8)a8, (A9)a9, (A10)a10, (A11)a11, (A12)a12, (A13)a13, (A14)a14, (A15)a15, (A16)a16);
   }
 };
 
@@ -375,27 +220,9 @@ struct functor18
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11, A12 a12, A13 a13, A14 a14, A15 a15, A16 a16, A17 a17);
 
-  static R call(functor18::type function, std::queue<void*> args)
+  static R call(functor18::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    A2 a2 = (A2)(args.front()); args.pop();
-    A3 a3 = (A3)(args.front()); args.pop();
-    A4 a4 = (A4)(args.front()); args.pop();
-    A5 a5 = (A5)(args.front()); args.pop();
-    A6 a6 = (A6)(args.front()); args.pop();
-    A7 a7 = (A7)(args.front()); args.pop();
-    A8 a8 = (A8)(args.front()); args.pop();
-    A9 a9 = (A9)(args.front()); args.pop();
-    A10 a10 = (A10)(args.front()); args.pop();
-    A11 a11 = (A11)(args.front()); args.pop();
-    A12 a12 = (A12)(args.front()); args.pop();
-    A13 a13 = (A13)(args.front()); args.pop();
-    A14 a14 = (A14)(args.front()); args.pop();
-    A15 a15 = (A15)(args.front()); args.pop();
-    A16 a16 = (A16)(args.front()); args.pop();
-    A17 a17 = (A17)(args.front()); args.pop();
-    return function(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+    return function((A0)a0, (A1)a1, (A2)a2, (A3)a3, (A4)a4, (A5)a5, (A6)a6, (A7)a7, (A8)a8, (A9)a9, (A10)a10, (A11)a11, (A12)a12, (A13)a13, (A14)a14, (A15)a15, (A16)a16, (A17)a17);
   }
 };
 
@@ -405,28 +232,9 @@ struct functor19
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11, A12 a12, A13 a13, A14 a14, A15 a15, A16 a16, A17 a17, A18 a18);
 
-  static R call(functor19::type function, std::queue<void*> args)
+  static R call(functor19::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    A2 a2 = (A2)(args.front()); args.pop();
-    A3 a3 = (A3)(args.front()); args.pop();
-    A4 a4 = (A4)(args.front()); args.pop();
-    A5 a5 = (A5)(args.front()); args.pop();
-    A6 a6 = (A6)(args.front()); args.pop();
-    A7 a7 = (A7)(args.front()); args.pop();
-    A8 a8 = (A8)(args.front()); args.pop();
-    A9 a9 = (A9)(args.front()); args.pop();
-    A10 a10 = (A10)(args.front()); args.pop();
-    A11 a11 = (A11)(args.front()); args.pop();
-    A12 a12 = (A12)(args.front()); args.pop();
-    A13 a13 = (A13)(args.front()); args.pop();
-    A14 a14 = (A14)(args.front()); args.pop();
-    A15 a15 = (A15)(args.front()); args.pop();
-    A16 a16 = (A16)(args.front()); args.pop();
-    A17 a17 = (A17)(args.front()); args.pop();
-    A18 a18 = (A18)(args.front()); args.pop();
-    return function(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
+    return function((A0)a0, (A1)a1, (A2)a2, (A3)a3, (A4)a4, (A5)a5, (A6)a6, (A7)a7, (A8)a8, (A9)a9, (A10)a10, (A11)a11, (A12)a12, (A13)a13, (A14)a14, (A15)a15, (A16)a16, (A17)a17, (A18)a18);
   }
 };
 
@@ -436,29 +244,9 @@ struct functor20
   typedef R rtype;
   typedef R (*type)(A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11, A12 a12, A13 a13, A14 a14, A15 a15, A16 a16, A17 a17, A18 a18, A19 a19);
 
-  static R call(functor20::type function, std::queue<void*> args)
+  static R call(functor20::type function, void** args)
   {
-    A0 a0 = (A0)(args.front()); args.pop();
-    A1 a1 = (A1)(args.front()); args.pop();
-    A2 a2 = (A2)(args.front()); args.pop();
-    A3 a3 = (A3)(args.front()); args.pop();
-    A4 a4 = (A4)(args.front()); args.pop();
-    A5 a5 = (A5)(args.front()); args.pop();
-    A6 a6 = (A6)(args.front()); args.pop();
-    A7 a7 = (A7)(args.front()); args.pop();
-    A8 a8 = (A8)(args.front()); args.pop();
-    A9 a9 = (A9)(args.front()); args.pop();
-    A10 a10 = (A10)(args.front()); args.pop();
-    A11 a11 = (A11)(args.front()); args.pop();
-    A12 a12 = (A12)(args.front()); args.pop();
-    A13 a13 = (A13)(args.front()); args.pop();
-    A14 a14 = (A14)(args.front()); args.pop();
-    A15 a15 = (A15)(args.front()); args.pop();
-    A16 a16 = (A16)(args.front()); args.pop();
-    A17 a17 = (A17)(args.front()); args.pop();
-    A18 a18 = (A18)(args.front()); args.pop();
-    A19 a19 = (A19)(args.front()); args.pop();
-    return function(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19);
+    return function((A0)a0, (A1)a1, (A2)a2, (A3)a3, (A4)a4, (A5)a5, (A6)a6, (A7)a7, (A8)a8, (A9)a9, (A10)a10, (A11)a11, (A12)a12, (A13)a13, (A14)a14, (A15)a15, (A16)a16, (A17)a17, (A18)a18, (A19)a19);
   }
 };
 

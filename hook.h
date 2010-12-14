@@ -1,5 +1,4 @@
 #include <vector>
-#include <queue>
 
 #include "hook_typedefs.h"
 
@@ -41,7 +40,7 @@ public:
     }
   }
 
-  void doAll(std::queue<void*> args)
+  void doAll(void** args)
   {
     int i = 0;
     int s = functions.size();
@@ -51,7 +50,7 @@ public:
     }
   }
 
-  bool doOne(std::queue<void*> args)
+  bool doOne(void** args)
   {
     int i = 0;
     int s = functions.size();
@@ -65,7 +64,7 @@ public:
     return false;
   }
 
-  typename T::rtype doThis(int n, std::queue<void*> args)
+  typename T::rtype doThis(int n, void** args)
   {
     return T::call(functions[n], args);
   }
