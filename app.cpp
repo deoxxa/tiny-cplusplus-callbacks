@@ -18,12 +18,12 @@ int main()
 {
   Hook<functor2<int,int,int> >* hook = new Hook<functor2<int,int,int> >;
 
-  hook->addCallback((functor2<int,int,int>::type)&multiply);
-  hook->addCallback((functor2<int,int,int>::type)&add);
+  hook->addCallback((functor2<int,int,int>::ftype)&multiply);
+  hook->addCallback((functor2<int,int,int>::ftype)&add);
 
   printf("We have %d callback(s)\n\n", hook->numCallbacks());
 
-  void* args[] = { (void*)3, (void*)5 };
+  functor2<int,int,int>::atype* args = new functor2<int,int,int>::atype(4, 5);
 
   printf("Calling all callbacks\n");
   hook->doAll(args);

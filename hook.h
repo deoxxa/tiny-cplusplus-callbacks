@@ -6,12 +6,14 @@ template <class T>
 class Hook
 {
 public:
-  typename T::type getCallback(int n)
+  typedef T type;
+
+  typename T::ftype getCallback(int n)
   {
     return functions[n];
   }
 
-  std::vector<typename T::type>* getCallbacks()
+  std::vector<typename T::ftype>* getCallbacks()
   {
     return &functions;
   }
@@ -21,12 +23,12 @@ public:
     return functions.size();
   }
 
-  void addCallback(typename T::type function)
+  void addCallback(typename T::ftype function)
   {
     functions.push_back(function);
   }
 
-  void remCallback(typename T::type function)
+  void remCallback(typename T::ftype function)
   {
     int i = 0;
     int s = functions.size();
@@ -40,7 +42,7 @@ public:
     }
   }
 
-  void doAll(void** args)
+  void doAll(typename T::atype* args)
   {
     int i = 0;
     int s = functions.size();
@@ -50,7 +52,7 @@ public:
     }
   }
 
-  bool doOne(void** args)
+  bool doOne(typename T::atype* args)
   {
     int i = 0;
     int s = functions.size();
@@ -64,10 +66,10 @@ public:
     return false;
   }
 
-  typename T::rtype doThis(int n, void** args)
+  typename T::rtype doThis(int n, typename T::atype* args)
   {
     return T::call(functions[n], args);
   }
 private:
-  std::vector<typename T::type> functions;
+  std::vector<typename T::ftype> functions;
 };
