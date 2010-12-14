@@ -1,31 +1,45 @@
 #include <cstdio>
-#include <vector>
+#include <queue>
 
 #include "hook.h"
 
 int multiply(int x, int y)
 {
-  return x*y;
+  int r = x*y;
+  return r;
 }
 
 int add(int x, int y)
 {
-  return x+y;
+  int r = x+y;
+  return r;
 }
 
 int main()
 {
-  Hook<functor2<int,int,int>::type>* hook = new Hook<functor2<int,int,int>::type>;
+  Hook<functor2<int,int,int> >* hook = new Hook<functor2<int,int,int> >;
 
   hook->addCallback((functor2<int,int,int>::type)&multiply);
   hook->addCallback((functor2<int,int,int>::type)&add);
 
-  printf("We have %d callback(s)\n", hook->numCallbacks());
+  printf("We have %d callback(s)\n\n", hook->numCallbacks());
 
-  int i = 0;
-  int j = hook->numCallbacks();
-  for (i=0;i<j;i++)
+  std::queue<void*> args;
+  args.push((void*)3);
+  args.push((void*)5);
+
+  printf("Calling all callbacks\n");
+  hook->doAll(args);
+  printf("Done!\n\n");
+
+  if (hook->doOne(args))
   {
-    printf("Result for callback %d is: %d\n", i, hook->getCallback(i)(4,5));
+    printf("Yay, one of our callbacks returned true or a value that was successfully cast to boolean and evaluated thusly!\n\n");
   }
+  else
+  {
+    printf("Apparently none of our callbacks was up to the task :(\n\n");
+  }
+
+  printf("First callback returns: %d\n", hook->doThis(0, args));
 }

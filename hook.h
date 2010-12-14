@@ -1,4 +1,5 @@
 #include <vector>
+#include <queue>
 
 #include "hook_typedefs.h"
 
@@ -6,12 +7,12 @@ template <class T>
 class Hook
 {
 public:
-  T getCallback(int n)
+  typename T::type getCallback(int n)
   {
     return functions[n];
   }
 
-  std::vector<T>* getCallbacks()
+  std::vector<typename T::type>* getCallbacks()
   {
     return &functions;
   }
@@ -21,24 +22,53 @@ public:
     return functions.size();
   }
 
-  void addCallback(T function)
+  void addCallback(typename T::type function)
   {
     functions.push_back(function);
   }
 
-  void remCallback(T function)
+  void remCallback(typename T::type function)
   {
-    typename std::vector<T>::iterator iter_a = functions.begin();
-    typename std::vector<T>::iterator iter_b = functions.end();
-    for (;iter_a!=iter_b;iter_a++)
+    int i = 0;
+    int s = functions.size();
+    for (;i<s;i++)
     {
-      if (functions[iter_a] == function)
+      if (functions[i] == function)
       {
-        functions.erase(iter_a);
+        functions.erase(i);
         break;
       }
     }
   }
+
+  void doAll(std::queue<void*> args)
+  {
+    int i = 0;
+    int s = functions.size();
+    for (;i<s;i++)
+    {
+      T::call(functions[i], args);
+    }
+  }
+
+  bool doOne(std::queue<void*> args)
+  {
+    int i = 0;
+    int s = functions.size();
+    for (;i<s;i++)
+    {
+      if (T::call(functions[i], args))
+      {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  typename T::rtype doThis(int n, std::queue<void*> args)
+  {
+    return T::call(functions[n], args);
+  }
 private:
-  std::vector<T> functions;
+  std::vector<typename T::type> functions;
 };
