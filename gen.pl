@@ -2,6 +2,9 @@
 
 defined($ARGV[0]) || die "Usage: $0 <num>\n";
 
+print "#ifndef _HOOK_TYPEDEFS_H\n";
+print "#define _HOOK_TYPEDEFS_H\n";
+print "\n";
 print "struct arglist {};\n";
 print "struct functor {};\n";
 print "\n";
@@ -109,3 +112,5 @@ for ($i=0;$i<=$ARGV[0];$i++)
   print "};\n";
   print "\n";
 }
+
+print "#endif\n";
