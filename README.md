@@ -3,20 +3,19 @@ Tiny C++ Callback Library
 
 This was written for mineserver (http://mineserver.be/) but may be useful for
 other people or projects. It's light on features and footprint, consisting of
-less than 100 lines of static (non-generated) code.
+a single header file of less than 100 lines per HookN definition.
 
 Usage
 -----
 
-The `Hook` class is used to store callbacks (or really anything else I guess),
-generally of the `functorN` type. The `functorN` typedefs are what make this
-whole thing tick right now. The `functorN` typedefs are used to store pointers
-to functions in a consistent way.
+The `Hook[N]` classes are used to store function pointers primarily and contain
+a couple of convenience functions to call said functions a) sequentially from
+first to last, b) sequentially until one returns true or c) by index.
 
 There's an example in `app.cpp` that shows how it all comes together. The
-`gen.pl` script can be used to generate more functorN definitions, should they
-be required. The default `hook_typedefs.h` distributed with this contains
-definitions for functors with up to 20 arguments.
+`gen.pl` script can be used to generate more Hook[N] definitions, should they
+be required. The default `hook.h` distributed with this contains definitions for
+hooks with up to 20 arguments. If you're using more than 20 arguments... Wow.
 
 License
 -------

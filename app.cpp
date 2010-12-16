@@ -23,32 +23,24 @@ public:
     return &m_self;
   }
 
-  typedef functor2<int,int,int> typeTest;
-  Hook<typeTest>* hookTest;
-  typedef typeTest::ftype funcTest;
-  typedef typeTest::atype argsTest;
+  Hook2<int,int,int> hookTest;
 
 private:
-  Plugin()
-  {
-    hookTest = new Hook<typeTest>;
-  }
+  Plugin() {}
 };
 
 int main()
 {
-  Plugin::get()->hookTest->addCallback(&multiply);
-  Plugin::get()->hookTest->addCallback(&add);
+  Plugin::get()->hookTest.addCallback(&multiply);
+  Plugin::get()->hookTest.addCallback(&add);
 
-  printf("We have %d callback(s)\n\n", Plugin::get()->hookTest->numCallbacks());
-
-  Plugin::argsTest* args = new Plugin::argsTest(4, 5);
+  printf("We have %d callback(s)\n\n", Plugin::get()->hookTest.numCallbacks());
 
   printf("Calling all callbacks\n");
-  Plugin::get()->hookTest->doAll(args);
+  Plugin::get()->hookTest.doAll(4, 5);
   printf("Done!\n\n");
 
-  if (Plugin::get()->hookTest->doOne(args))
+  if (Plugin::get()->hookTest.doOne(4, 5))
   {
     printf("Yay, one of our callbacks returned true or a value that was successfully cast to boolean and evaluated thusly!\n\n");
   }
@@ -57,5 +49,5 @@ int main()
     printf("Apparently none of our callbacks was up to the task :(\n\n");
   }
 
-  printf("First callback returns: %d\n", Plugin::get()->hookTest->doThis(0, args));
+  printf("First callback returns: %d\n", Plugin::get()->hookTest.doThis(0, 4, 5));
 }
