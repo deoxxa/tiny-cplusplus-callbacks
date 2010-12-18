@@ -83,13 +83,28 @@ public:
     }
   }
 
-  bool doOne(_TA_)
+  bool doUntilTrue(_TA_)
   {
     typename std::vector<ftype>::iterator ia = callbacks.begin();
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(_A_))
+      if (((ftype)*ia)(_A_) == true)
+      {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  bool doUntilFalse(_TA_)
+  {
+    typename std::vector<ftype>::iterator ia = callbacks.begin();
+    typename std::vector<ftype>::iterator ib = callbacks.end();
+    for (;ia!=ib;++ia)
+    {
+      if (((ftype)*ia)(_A_) == false)
       {
         return true;
       }
