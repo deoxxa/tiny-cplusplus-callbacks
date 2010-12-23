@@ -61,7 +61,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)() == true)
+      if (((ftype)*ia)())
       {
         return true;
       }
@@ -76,7 +76,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)() == false)
+      if (!((ftype)*ia)())
       {
         return true;
       }
@@ -149,7 +149,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1) == true)
+      if (((ftype)*ia)(a1))
       {
         return true;
       }
@@ -164,7 +164,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1) == false)
+      if (!((ftype)*ia)(a1))
       {
         return true;
       }
@@ -237,7 +237,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2) == true)
+      if (((ftype)*ia)(a1, a2))
       {
         return true;
       }
@@ -252,7 +252,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2) == false)
+      if (!((ftype)*ia)(a1, a2))
       {
         return true;
       }
@@ -325,7 +325,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3) == true)
+      if (((ftype)*ia)(a1, a2, a3))
       {
         return true;
       }
@@ -340,7 +340,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3) == false)
+      if (!((ftype)*ia)(a1, a2, a3))
       {
         return true;
       }
@@ -413,7 +413,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4) == true)
+      if (((ftype)*ia)(a1, a2, a3, a4))
       {
         return true;
       }
@@ -428,7 +428,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4) == false)
+      if (!((ftype)*ia)(a1, a2, a3, a4))
       {
         return true;
       }
@@ -501,7 +501,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5) == true)
+      if (((ftype)*ia)(a1, a2, a3, a4, a5))
       {
         return true;
       }
@@ -516,7 +516,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5) == false)
+      if (!((ftype)*ia)(a1, a2, a3, a4, a5))
       {
         return true;
       }
@@ -589,7 +589,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6) == true)
+      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6))
       {
         return true;
       }
@@ -604,7 +604,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6) == false)
+      if (!((ftype)*ia)(a1, a2, a3, a4, a5, a6))
       {
         return true;
       }
@@ -677,7 +677,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7) == true)
+      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7))
       {
         return true;
       }
@@ -692,7 +692,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7) == false)
+      if (!((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7))
       {
         return true;
       }
@@ -765,7 +765,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8) == true)
+      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8))
       {
         return true;
       }
@@ -780,7 +780,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8) == false)
+      if (!((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8))
       {
         return true;
       }
@@ -853,7 +853,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9) == true)
+      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9))
       {
         return true;
       }
@@ -868,7 +868,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9) == false)
+      if (!((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9))
       {
         return true;
       }
@@ -941,7 +941,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10) == true)
+      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10))
       {
         return true;
       }
@@ -956,7 +956,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10) == false)
+      if (!((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10))
       {
         return true;
       }
@@ -1029,7 +1029,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11) == true)
+      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11))
       {
         return true;
       }
@@ -1044,7 +1044,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11) == false)
+      if (!((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11))
       {
         return true;
       }
@@ -1117,7 +1117,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12) == true)
+      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12))
       {
         return true;
       }
@@ -1132,7 +1132,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12) == false)
+      if (!((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12))
       {
         return true;
       }
@@ -1205,7 +1205,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13) == true)
+      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13))
       {
         return true;
       }
@@ -1220,7 +1220,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13) == false)
+      if (!((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13))
       {
         return true;
       }
@@ -1293,7 +1293,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14) == true)
+      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14))
       {
         return true;
       }
@@ -1308,7 +1308,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14) == false)
+      if (!((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14))
       {
         return true;
       }
@@ -1381,7 +1381,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15) == true)
+      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15))
       {
         return true;
       }
@@ -1396,7 +1396,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15) == false)
+      if (!((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15))
       {
         return true;
       }
@@ -1469,7 +1469,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16) == true)
+      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16))
       {
         return true;
       }
@@ -1484,7 +1484,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16) == false)
+      if (!((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16))
       {
         return true;
       }
@@ -1557,7 +1557,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17) == true)
+      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17))
       {
         return true;
       }
@@ -1572,7 +1572,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17) == false)
+      if (!((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17))
       {
         return true;
       }
@@ -1645,7 +1645,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18) == true)
+      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18))
       {
         return true;
       }
@@ -1660,7 +1660,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18) == false)
+      if (!((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18))
       {
         return true;
       }
@@ -1733,7 +1733,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19) == true)
+      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19))
       {
         return true;
       }
@@ -1748,7 +1748,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19) == false)
+      if (!((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19))
       {
         return true;
       }
@@ -1821,7 +1821,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20) == true)
+      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20))
       {
         return true;
       }
@@ -1836,7 +1836,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20) == false)
+      if (!((ftype)*ia)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20))
       {
         return true;
       }

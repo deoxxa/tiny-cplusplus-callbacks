@@ -91,7 +91,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(_A_) == true)
+      if (((ftype)*ia)(_A_))
       {
         return true;
       }
@@ -106,7 +106,7 @@ public:
     typename std::vector<ftype>::iterator ib = callbacks.end();
     for (;ia!=ib;++ia)
     {
-      if (((ftype)*ia)(_A_) == false)
+      if (!((ftype)*ia)(_A_))
       {
         return true;
       }
