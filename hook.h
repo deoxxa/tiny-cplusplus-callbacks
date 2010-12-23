@@ -3,8 +3,10 @@
 
 #include <vector>
 
+class Hook {};
+
 template <class R>
-class Hook0
+class Hook0 : public Hook
 {
 public:
   typedef R (*ftype)();
@@ -92,7 +94,7 @@ private:
 };
 
 template <class R, class A1>
-class Hook1
+class Hook1 : public Hook
 {
 public:
   typedef R (*ftype)(A1);
@@ -180,7 +182,7 @@ private:
 };
 
 template <class R, class A1, class A2>
-class Hook2
+class Hook2 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2);
@@ -268,7 +270,7 @@ private:
 };
 
 template <class R, class A1, class A2, class A3>
-class Hook3
+class Hook3 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2, A3);
@@ -356,7 +358,7 @@ private:
 };
 
 template <class R, class A1, class A2, class A3, class A4>
-class Hook4
+class Hook4 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2, A3, A4);
@@ -444,7 +446,7 @@ private:
 };
 
 template <class R, class A1, class A2, class A3, class A4, class A5>
-class Hook5
+class Hook5 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2, A3, A4, A5);
@@ -532,7 +534,7 @@ private:
 };
 
 template <class R, class A1, class A2, class A3, class A4, class A5, class A6>
-class Hook6
+class Hook6 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2, A3, A4, A5, A6);
@@ -620,7 +622,7 @@ private:
 };
 
 template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7>
-class Hook7
+class Hook7 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2, A3, A4, A5, A6, A7);
@@ -708,7 +710,7 @@ private:
 };
 
 template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8>
-class Hook8
+class Hook8 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2, A3, A4, A5, A6, A7, A8);
@@ -796,7 +798,7 @@ private:
 };
 
 template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9>
-class Hook9
+class Hook9 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2, A3, A4, A5, A6, A7, A8, A9);
@@ -884,7 +886,7 @@ private:
 };
 
 template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10>
-class Hook10
+class Hook10 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10);
@@ -972,7 +974,7 @@ private:
 };
 
 template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11>
-class Hook11
+class Hook11 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11);
@@ -1060,7 +1062,7 @@ private:
 };
 
 template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11, class A12>
-class Hook12
+class Hook12 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12);
@@ -1148,7 +1150,7 @@ private:
 };
 
 template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11, class A12, class A13>
-class Hook13
+class Hook13 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13);
@@ -1236,7 +1238,7 @@ private:
 };
 
 template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11, class A12, class A13, class A14>
-class Hook14
+class Hook14 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14);
@@ -1324,7 +1326,7 @@ private:
 };
 
 template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11, class A12, class A13, class A14, class A15>
-class Hook15
+class Hook15 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15);
@@ -1412,7 +1414,7 @@ private:
 };
 
 template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11, class A12, class A13, class A14, class A15, class A16>
-class Hook16
+class Hook16 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16);
@@ -1500,7 +1502,7 @@ private:
 };
 
 template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11, class A12, class A13, class A14, class A15, class A16, class A17>
-class Hook17
+class Hook17 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17);
@@ -1588,7 +1590,7 @@ private:
 };
 
 template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11, class A12, class A13, class A14, class A15, class A16, class A17, class A18>
-class Hook18
+class Hook18 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18);
@@ -1676,7 +1678,7 @@ private:
 };
 
 template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11, class A12, class A13, class A14, class A15, class A16, class A17, class A18, class A19>
-class Hook19
+class Hook19 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19);
@@ -1764,7 +1766,7 @@ private:
 };
 
 template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11, class A12, class A13, class A14, class A15, class A16, class A17, class A18, class A19, class A20>
-class Hook20
+class Hook20 : public Hook
 {
 public:
   typedef R (*ftype)(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20);

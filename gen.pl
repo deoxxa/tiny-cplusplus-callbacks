@@ -1,11 +1,13 @@
 #!/usr/bin/perl
 
-(defined($ARGV[0]) && defined($ARGV[1]) && ($ARGV[0] =~ /^\d+$/) && ($ARGV[1] =~ /^\d+$/)) || die "Usage: $0 <min> <max>\n";
+(defined($ARGV[0]) && defined($ARGV[1]) && ($ARGV[0] =~ /^\d+$/) && ($ARGV[1] =~ /^\d+$/) && ($ARGV[0] <= $ARGV[1])) || die "Usage: $0 <min> <max>\n";
 
 print "#ifndef _HOOK_H\n";
 print "#define _HOOK_H\n";
 print "\n";
 print "#include <vector>\n";
+print "\n";
+print "class Hook {};\n";
 print "\n";
 
 my $data = do { local $/; <DATA> };
@@ -34,7 +36,7 @@ print "#endif";
 
 __DATA__
 template <class R_C__CT_>
-class Hook_N_
+class Hook_N_ : public Hook
 {
 public:
   typedef R (*ftype)(_T_);
