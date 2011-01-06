@@ -61,6 +61,11 @@ public:
     callbacks.push_back(function);
   }
 
+  void addCallback(void* function)
+  {
+    callbacks.push_back(reinterpret_cast<ftype>(function));
+  }
+
   void remCallback(ftype function)
   {
     typename std::vector<ftype>::iterator ia = callbacks.begin();
