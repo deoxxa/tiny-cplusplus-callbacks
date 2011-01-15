@@ -1,6 +1,7 @@
 #include <cstdio>
 #include <map>
 #include <string>
+#include <utility>
 
 #include "hook.h"
 
@@ -36,6 +37,8 @@ public:
     {
       return m_hooks[name];
     }
+
+    return NULL;
   }
 
   void setHook(const std::string name, Hook* hook)
@@ -89,4 +92,6 @@ int main()
   }
 
   printf("First callback returns: %d\n", hookTest->doThis(0, 4, 5));
+
+  return 0;
 }
